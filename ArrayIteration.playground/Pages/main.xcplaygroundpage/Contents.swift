@@ -14,7 +14,7 @@
  ### 1. You're building an app and want to store all of the ingredients added to a cart. How would you represent this cart in code? The ingredients are "Chips", "Salsa", "Guacamole", "Red wine". Explicitly mark the content of the cart as strings.
  */
 // write your code here
-
+let cart : [String] = ["chips", "salsa", "guacamole", "red wine"]
 
 
 
@@ -26,8 +26,12 @@
 // write your code here
 
 
-
-
+var list : [Int] = []
+var i = 1;
+while i <= 10 {
+    list.append(i)
+    i += 1
+}
 
 
 
@@ -37,7 +41,9 @@
 // write your code here
 
 
-
+for integer in list {
+    print(integer)
+}
 
 
 
@@ -47,7 +53,9 @@
  */
 // write your code here
 
-
+for cartItems in cart {
+    print("hey: \(cartItems)")
+}
 
 
 
@@ -58,7 +66,7 @@
  */
 // write your code here
 
-
+print(cart)
 
 
 
@@ -68,8 +76,15 @@
  ### 4. Create a function that takes an array of names and greets each person with the following message "Good morning x" <- x being the individuals name. One caveat. If the persons first name is Michael, we want to greet them with the message, "Top of the morning Michael!".
  */
 // write your code here
-
-
+func greeting(students : [String]) -> Void {
+    for studentName in students {
+        if studentName == "Michael" {
+            print("Top of the morning \(studentName)")
+        } else {
+            print("Good morning \(studentName)")
+        }
+    }
+}
 
 
 
@@ -77,13 +92,19 @@
 /*: question7
  ### 7. Create a function that takes an array of Ints (40, 60, 50, 52, 59, 13, 90, 100, 5, 52, 51, 49) and returns an array of Ints. This function should look through the array of Ints and create a new array of Ints that only contain integers less than 50.
  */
-// write your code here
+func numbersLessThan50(arrayOfNumbers: [Int]) -> [Int] {
+    var numbersLessThan50 : [Int] = []
+    for number in arrayOfNumbers {
+        if number < 50 {
+            numbersLessThan50.append(number)
+        }
+    }
+    return numbersLessThan50
+}
 
+let arrayOfNumbers = [40, 60, 50, 52, 59, 13, 90, 100, 5, 52, 51, 49]
 
+var finalNumbers = numbersLessThan50(arrayOfNumbers)
 
-
-
-
-
-
+print(finalNumbers)
 //: Check here on the solution branch for a link to the solution file
